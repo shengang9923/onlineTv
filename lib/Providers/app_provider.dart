@@ -7,13 +7,20 @@ import '../Model/model.dart';
 
 class AppProvider extends ChangeNotifier {
   List<ChannelModel>? _favData;
+  List<ChannelModel> _tvlistData = [];
   List _clickFav = [];
   bool _itemSelected = false;
 
   List<ChannelModel>? get favData => _favData;
+  List<ChannelModel> get tvlistData => _tvlistData;
   List get clickFav => _clickFav;
 
   bool get itemSelected => _itemSelected;
+
+  setTvList(data){
+    _tvlistData = data;
+    notifyListeners();
+  }
 
   setFav(favData, channel_name) async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
