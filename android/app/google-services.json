@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "909262073828",
+    "project_id": "livetv-9a799",
+    "storage_bucket": "livetv-9a799.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909262073828:android:2b19e3a5beda80426021f1",
+        "android_client_info": {
+          "package_name": "com.example.onlinetv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeYZzQFDNxISWhmiuz4YfX-0wDsK6qb-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

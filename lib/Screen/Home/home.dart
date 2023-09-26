@@ -11,6 +11,7 @@ import 'package:onlinetv/Model/model.dart';
 import 'package:onlinetv/Service/service.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:video_player/video_player.dart';
 import '../../Constants/source_type.dart';
 import '../IPTV/iptv_player.dart';
 
@@ -22,12 +23,19 @@ class Home extends StatelessWidget {
     return Future.value(false);
   }
 
+  testfunc() {
+    VideoPlayerController controller =
+        VideoPlayerController.networkUrl(Uri.parse(''))
+          ..initialize();
+    return VideoPlayer(controller);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xFFf8f4fd),
         appBar: AppBar(
-          title: Text("OnlineTV"),
+          title: Text("LiveTV"),
           actions: [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
@@ -36,14 +44,21 @@ class Home extends StatelessWidget {
                   return IconButton(
                     onPressed: () {
                       final myProvider =
-                      Provider.of<AppProvider>(context, listen: false);
+                          Provider.of<AppProvider>(context, listen: false);
                       myProvider.getFav();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => FavoriteScreen()));
                     },
-                    icon: Icon(Icons.star,color: provider.favData == null ? Colors.amber : provider.favData!.length > 0 ? Colors.amber : Colors.grey,),
+                    icon: Icon(
+                      Icons.star,
+                      color: provider.favData == null
+                          ? Colors.amber
+                          : provider.favData!.length > 0
+                              ? Colors.amber
+                              : Colors.grey,
+                    ),
                   );
                 },
               ),

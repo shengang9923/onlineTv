@@ -44,6 +44,8 @@ dependencies:
   flutter_animated_icons: ^1.0.1
   http: ^1.1.0
   flutter_easyloading: ^3.0.5
+  firebase_core: ^2.16.0
+  firebase_auth: ^4.10.0
 
 dev_dependencies:
   flutter_test:
