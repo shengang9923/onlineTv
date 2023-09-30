@@ -65,40 +65,46 @@ class _OTPLoginPageState extends State<OTPLoginPage> {
             if (_isOTPSend == false)
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'Enter your phone number:',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    SizedBox(height: 10),
-                    TextFormField(
-                      controller: _phoneNumberController,
-                      keyboardType: TextInputType.phone,
-                      decoration: InputDecoration(
-                        hintText: 'Phone Number',
-                        prefixIcon: Icon(Icons.phone),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset("lo.jpg"),
+                      SizedBox(height: 40,),
+                      Text(
+                        'Enter your phone number:',
+                        style: TextStyle(fontSize: 18),
                       ),
-                    ),
-                    SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        String phoneNumber = _phoneNumberController.text;
-                        if (phoneNumber != '') {
-                          EasyLoading.show(status: "Sending OTP...");
-                          sendOTP("+91" + phoneNumber).then((value) {});
-                        }
-                      },
-                      child: Text('Submit'),
-                    ),
-                  ],
+                      SizedBox(height: 10),
+                      TextFormField(
+                        controller: _phoneNumberController,
+                        keyboardType: TextInputType.phone,
+                        decoration: InputDecoration(
+                          hintText: 'Phone Number',
+                          prefixIcon: Icon(Icons.phone),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: () {
+                          String phoneNumber = _phoneNumberController.text;
+                          if (phoneNumber != '') {
+                            EasyLoading.show(status: "Sending OTP...");
+                            sendOTP("+91" + phoneNumber).then((value) {});
+                          }
+                        },
+                        child: Text('Submit'),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             if (_isOTPSend == true)
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  Image.asset("lo.jpg"),
+                  SizedBox(height: 40,),
                   Text(
                     'Enter OTP:',
                     style: TextStyle(fontSize: 18),
